@@ -14,9 +14,6 @@ https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/L
 using namespace std;
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
     int A, B;
     cin >> A >> B;
 
