@@ -16,9 +16,6 @@ https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/N
 using namespace std;
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
     char S;
     cin >> S;
 
