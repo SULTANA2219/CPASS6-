@@ -12,27 +12,20 @@ https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/R
 
 
 
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+    int N, M;
 
-    while (true) {
-        int N, M;
-        cin >> N >> M;
-
-        if (N <= 0 || M <= 0) {
-            break;   // stop the program immediately
-        }
-
-        int start = min(N, M);
-        int end   = max(N, M);
+    while (cin >> N >> M) {
+        if (N <= 0 || M <= 0) break;
 
         int sum = 0;
 
-        for (int i = start; i <= end; i++) {
+        if (N > M) swap(N, M);  // make N the smaller one
+
+        for (int i = N; i <= M; i++) {
             cout << i << " ";
             sum += i;
         }
