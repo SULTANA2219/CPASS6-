@@ -12,31 +12,17 @@ https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/K
 
 
 
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+    int n;
+    cin >> n;
 
-    int N;
-    cin >> N;
-
-    vector<int> divisors;
-
-    for (int i = 1; i * i <= N; i++) {
-        if (N % i == 0) {
-            divisors.push_back(i);
-            if (i != N / i) divisors.push_back(N / i);
-        }
-    }
-
-    sort(divisors.begin(), divisors.end());
-
-    for (int d : divisors) {
-        cout << d << "\n";
+    for (int i = 1; i <= n; i++) {
+        if (n % i == 0)
+            cout << i << endl;
     }
 
     return 0;
 }
-
