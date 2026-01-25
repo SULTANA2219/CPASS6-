@@ -10,24 +10,26 @@
 https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/J
 */
 
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    int N;
-    if (!(cin >> N)) return 0;
-    if (N < 2) return 0;
-    vector<bool> isPrime(N+1, true);
-    isPrime[0] = isPrime[1] = false;
-    for (int p = 2; p * p <= N; ++p) if (isPrime[p])
-        for (int k = p*p; k <= N; k += p) isPrime[k] = false;
-    bool first = true;
-    for (int i = 2; i <= N; ++i) if (isPrime[i]) {
-        if (!first) cout << ' ';
-        first = false;
-        cout << i;
-    }
-    cout << '\n';
-}
 
+int main() {
+    int n;
+    cin >> n;
+
+    for (int i = 2; i <= n; i++) {
+        bool prime = true;
+
+        for (int j = 2; j < i; j++) {
+            if (i % j == 0) {
+                prime = false;
+                break;
+            }
+        }
+
+        if (prime)
+            cout << i << " ";
+    }
+
+    return 0;
+}
