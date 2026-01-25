@@ -12,40 +12,28 @@ https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/M
 
 
 
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-bool isLucky(int x) {
-    while (x > 0) {
-        int d = x % 10;
-        if (d != 4 && d != 7) return false;
-        x /= 10;
-    }
-    return true;
-}
-
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
     int A, B;
     cin >> A >> B;
-
-    vector<int> lucky;
+    bool found = false;
 
     for (int i = A; i <= B; i++) {
-        if (isLucky(i)) lucky.push_back(i);
+        int n = i;
+        while (n > 0) {
+            int d = n % 10;
+            if (d != 4 && d != 7) break;
+            n /= 10;
+        }
+        if (n == 0) {
+            cout << i << " ";
+            found = true;
+        }
     }
 
-    if (lucky.empty()) {
-        cout << -1 << "\n";
-    } else {
-        for (int i = 0; i < (int)lucky.size(); i++) {
-            if (i) cout << " ";
-            cout << lucky[i];
-        }
-        cout << "\n";
-    }
+    if (!found) cout << -1;
 
     return 0;
 }
